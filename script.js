@@ -1,16 +1,12 @@
+// Animation au scroll (fade-in)
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const faders = document.querySelectorAll('.fade-in');
-
-  function appearOnScroll() {
-    faders.forEach(fader => {
-      const rect = fader.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        fader.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', appearOnScroll);
-  appearOnScroll(); // initial check
+document.querySelectorAll('.section').forEach(section => {
+  observer.observe(section);
 });
