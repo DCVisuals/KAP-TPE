@@ -1,0 +1,74 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1, h2 {
+  color: #114b5f;
+}
+
+a {
+  color: #028090;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#sticky-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #456990;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#sticky-btn:hover {
+  background-color: #114b5f;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  #sticky-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
